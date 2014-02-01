@@ -10,7 +10,11 @@ describe "Static pages" do
     end
     it "should have title home" do
       visit '/static_pages/home'
-      expect(page).to have_title('Sample App | Home')
+      expect(page).to have_title('Sample App') 
+    end
+    it "should not have a custom page title" do
+      visit '/static_pages/home'
+      expect(page).not_to have_title('| Home')
     end
   end
 
